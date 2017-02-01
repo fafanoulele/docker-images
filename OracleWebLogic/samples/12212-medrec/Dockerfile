@@ -45,6 +45,7 @@ RUN cd /u01 && $JAVA_HOME/bin/jar xf /u01/$FMW_PKG && cd - && \
     echo oracle:oracle | chpasswd && \ 
     su -c "$JAVA_HOME/bin/java -jar /u01/$FMW_JAR  ORACLE_HOME=$ORACLE_HOME" - oracle && \
     mv /u01/startSample.sh /u01/oracle/wlserver/samples/server/  && \
+    chmod u+x /u01/oracle/wlserver/samples/server/startSample.sh && \
     rm /u01/$FMW_PKG /u01/$FMW_JAR
 
 WORKDIR $ORACLE_HOME/wlserver/samples/server
